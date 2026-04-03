@@ -27,5 +27,8 @@ try{
         echo json_encode(["message"=>"NO record found for this id"]);
     }
 }
-
+catch(PDOException $e)
+{
+    echo json_encode(["message"=>$e.getMessage()]);
+}
 
